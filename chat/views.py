@@ -48,8 +48,12 @@ class ChatListView(generics.ListAPIView):
                default=0,
                output_field=models.IntegerField()
             ),
+             unread_message_count=models.Count(
+               models.Q(messages__read=self.request.user),
+               output_field = models.IntegerField()
+            ),
 
-        )
+        ).order_by("-is_pinned").all()
 
 class ChatCreateView(generics.CreateAPIView):
     queryset = Chat.objects.all()
