@@ -19,3 +19,14 @@ class ChatListSerializer(serializers.ModelSerializer):
         model = Chat
         fields = ('id', 'last_message', 'last_message_date',
                   "profile_image", 'profile_title','is_unmuted')
+
+class ChatCreateSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Chat
+        fields = "__all__"
+
+
+class MessageCreateSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Message
+        fields = "__all__"
