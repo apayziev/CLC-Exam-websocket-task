@@ -18,9 +18,6 @@ class ChatListView(generics.ListAPIView):
     serializer_class = serializers.ChatListSerializer
     pagination_class = CustomPagination
 
-    
-# .order_by("-messages__created_at").distinct()
-
     def get_queryset(self):
         return self.queryset.filter(members=self.request.user).annotate(
             # profile image
@@ -45,7 +42,12 @@ class ChatListView(generics.ListAPIView):
                 models.When(unmuted=self.request.user, then=True),
                 default= False,
                 output_field=models.BooleanField()
-            )
+            ),
+            is_pinned=models.Case(
+               models.When(pinned=self.request.user, then=1),
+               default=0,
+               output_field=models.IntegerField()
+            ),
 
         )
 
