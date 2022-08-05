@@ -1,5 +1,5 @@
 **Boilerplate to create Django project.**
-
+image.png
 **Usage:**
 
 1. Use this template
