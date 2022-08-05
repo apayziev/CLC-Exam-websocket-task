@@ -1,5 +1,5 @@
 **Exam tasks**
-![alt text](https://github.com/apayziev/CLC-Exam-websocket-task/blob/5286660d422945df5c049327fc8bb5d41c05d417/task-questions.png)
+
 **Usage:**
 
 1. Use this template
