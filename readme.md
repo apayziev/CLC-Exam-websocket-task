@@ -1,5 +1,5 @@
 **Boilerplate to create Django project.**
-image.png
+<https://github.com/apayziev/CLC-Exam-websocket-task/blob/main/task-questions.png>
 **Usage:**
 
 1. Use this template
